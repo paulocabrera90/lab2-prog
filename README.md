@@ -2,8 +2,8 @@
 Laboratorio 2 de Programacion con C#
 
 Lab2, integrada por:
-                Paulo Cabrera
-                Kevin Navarro 
+                Paulo Cabrera,
+                Kevin Navarro, 
                 Martin Zanche
 
 Práctico Nº 2 POO
