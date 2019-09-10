@@ -5,6 +5,8 @@
  */
 package objects;
 
+import java.util.Date;
+
 /**
  *
  * @author Usuario
@@ -13,17 +15,20 @@ public class Animal {
      private String nombre;
      private String tipoAlimentacion;
      private int edad;
+     private Date fechaNacimiento;
 
     public Animal() {
         this.nombre = "";
         this.tipoAlimentacion = "";
         this.edad = 0;
+        this.fechaNacimiento = null;
     }
 
-    public Animal(String nombre, String tipoAlimentacion, int edad) {
+    public Animal(String nombre, String tipoAlimentacion, int edad, Date fecNac) {
         this.nombre = nombre;
         this.tipoAlimentacion = tipoAlimentacion;
         this.edad = edad;
+        this.fechaNacimiento = fecNac;
     }
 
     /**
@@ -64,11 +69,35 @@ public class Animal {
     /**
      * @param edad the edad to set
      */
+    
     public void setEdad(int edad) {
         this.edad = edad;
     }
-     
+    
+    public void edadConFechaDeNac(){
+          java.util.Date fecha = new Date();
+        int anioEdad =(fecha.getYear()+1900)  - (this.fechaNacimiento.getYear()+1900);
+        this.setEdad(anioEdad);
+    }
+    
      public boolean vacunar(int edadVac){
-         return this.edad < edadVac;
+//         Date fechaActual = new Date();
+         int anioEdad = (this.fechaNacimiento.getYear()+1900);
+         
+         return anioEdad < edadVac;
      }
+
+    /**
+     * @return the fechaNacimiento
+     */
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    /**
+     * @param fechaNacimiento the fechaNacimiento to set
+     */
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
 }

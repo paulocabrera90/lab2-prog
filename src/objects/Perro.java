@@ -5,6 +5,8 @@
  */
 package objects;
 
+import java.util.Date;
+
 /**
  *
  * @author Usuario
@@ -20,8 +22,8 @@ public class Perro extends Animal{
          this.raza = "";
     }
 
-    public Perro(String raza, String nombre, String tipoAlimentacion, int edad) {
-        super(nombre, tipoAlimentacion, edad);
+    public Perro(String raza, String nombre, String tipoAlimentacion, int edad, Date fechNac) {
+        super(nombre, tipoAlimentacion, edad, fechNac);
         this.raza = raza;
     }
 
@@ -39,6 +41,15 @@ public class Perro extends Animal{
         this.raza = raza;
     }
     
+    
+      public void mostrar(int edadVac){
+           String vac = "No";
+          if(this.vacunar(edadVac)){
+              vac= "Si";
+          }
+        
+        System.out.println("Perro : " + this.getNombre() + ", Raza: " + this.getRaza() + ", Edad: "+ this.getEdad() + ", Tipo Alimentacion: " + this.getTipoAlimentacion() + ", Tiene Vacuna: " + vac);
+    }
     
     
     
